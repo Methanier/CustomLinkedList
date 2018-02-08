@@ -19,11 +19,11 @@ private:
 		DataNode *prevItem;
 
 		//Constructor for const data objects
-		Node(const T & inData = T{}, Node * next = nullptr, Node * prev = nullptr) : data{ indata }, nextitem{ next }, prevItem{ prevItem } {}
+		DataNode(const T & inData = T{}, DataNode * next = nullptr, DataNode * prev = nullptr) : data{ indata }, nextitem{ next }, prevItem{ prevItem } {}
 
 		//Constructor for rvalue reference objects, to allow for modification of objects in the linked list
-		Node(T && inData, Node * next = nullptr, Node * prev = nullptr) : data{ std::move(indata) }, nextItem{ next }, prevItem{ prev } {}
-	};
+		DataNode(T && inData, DataNode * next = nullptr, DataNode * prev = nullptr) : data{ std::move(indata) }, nextItem{ next }, prevItem{ prev } {}
+	};	
 
 public:
 	//Empty Constructor creates empty linked list
@@ -45,19 +45,29 @@ public:
 	void Insert(T && inData);
 
 	//Find method to find a const value of type T in the list
-	void Find(const T & inData);
+	T& Find(const T & inData) const;
 
 	//Find method to find a non-sont value of type T in the list
-	void Find(T && inData);
+	T* Find(T && inData);
 
 	//Delete method to remove a const value of type T from the list
 	void Delete(const T & inData);
 	
 	//Delete method to remove a non-const value of type T from the list
-	void Delete(T & inData);
+	void Delete(T && inData);
+
+	const T & operator[](int x) const;
+
+	T & operator[](int x);
 
 	//Initalises all the values for an empty list
 	void Init();
+
+	//Deltes all data in the list
+	void clear();
+
+	//Returns the size of the list
+	int Size() { return listSize; }
 
 private:
 	int listSize;
