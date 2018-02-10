@@ -1,3 +1,5 @@
-﻿  LinkedList.cpp
+﻿  Main.cpp
+f:\school\spring 2018\csc382\customlinkedlist\customlinkedlist\customlinkedlist\employee.h(38): warning C4172: returning address of local variable or temporary: result
+f:\school\spring 2018\csc382\customlinkedlist\customlinkedlist\customlinkedlist\linkedlist.h(345): warning C4172: returning address of local variable or temporary: outData
   CustomLinkedList.vcxproj -> F:\School\Spring 2018\CSC382\CustomLinkedList\CustomLinkedList\Debug\CustomLinkedList.exe
   CustomLinkedList.vcxproj -> F:\School\Spring 2018\CSC382\CustomLinkedList\CustomLinkedList\Debug\CustomLinkedList.pdb (Full PDB)
